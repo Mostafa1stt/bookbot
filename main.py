@@ -1,4 +1,5 @@
 from stats import get_num_words, list_of_dic
+import sys
 
 
 def get_book_text(path):
@@ -8,7 +9,12 @@ def get_book_text(path):
 
 
 def main():
-    contents = get_book_text("./books/frankenstein.txt")
+
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    path = sys.argv[1]
+    contents = get_book_text(path)
     num_words = get_num_words(contents)
     print(f"Found {num_words} total words")
     for i in list_of_dic(contents):
