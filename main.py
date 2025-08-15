@@ -12,6 +12,7 @@ def main():
     num_words = get_num_words(contents)
     print(f"Found {num_words} total words")
     for i in list_of_dic(contents):
+        print(f"{i["char"]}: {i["num"]}")
 
 
 main()
